@@ -1,0 +1,224 @@
+/*Start Global*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+}
+.no-click{
+    pointer-events: none;
+}
+.fl_fix{
+    clear: both;
+}
+/*End Global*/
+/*Start main Container */
+.main-container{
+    width: 1500px;
+    overflow: auto;
+    margin: 20px auto;
+}
+/*End main Container*/
+/*Start info container*/
+.main-container .info-container{
+    width: 1500px;
+    margin: 50px auto;
+    font-size: 1.5em;
+    border: 5px solid #61DAFB;
+    border-radius: 10px;
+    overflow: auto;
+}
+.main-container .info-container .info-name,
+.main-container .info-container .info-time,
+.main-container .info-container .info-tries{
+    width: 33%;
+    float:left;
+    padding: 20px;
+}
+.main-container .info-container .info-time{ text-align: center;}
+.main-container .info-container .info-tries{ text-align: right;}
+/*End info container*/
+/*Start Blocks container*/
+.main-container .blocks-container{
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    position: relative;
+}
+.main-container .blocks-container .block-container{
+    height: 20%;
+    margin: 10px;
+    flex: 1 0 18%;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    user-select: none;
+}
+.main-container .blocks-container .block-container .face{
+    width: 100%;
+    height: 100%;
+    border: 5px solid #61DAFB;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    text-align: center;
+}
+.main-container .blocks-container .block-container.displayFlip,
+.main-container .blocks-container .block-container.displayMatched{
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+.main-container .blocks-container .block-container .front{
+    background-color: brown;
+    position: absolute;
+}
+.main-container .blocks-container .block-container .front::before{
+    content: "!";
+    font-weight: bold;
+    font-size: 140px;
+}
+.main-container .blocks-container .block-container .back{
+    background-color: rgba(128, 128, 128, 0.2);
+    transform: rotateY(180deg);
+}
+.main-container .blocks-container .block-container .back img{
+    width: 80%;
+    padding: 10px;
+}
+.main-container .blocks-container .messages{
+    width: 1077px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 10px solid black;
+    transform: translate(-50%, -50%);
+    background-color: rgba(128, 128, 128, .9);
+    line-height: 350px;
+    color: brown;
+    text-align: center;
+    font-size: 140px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.main-container .blocks-container .messages .msg-success::before{
+    content: 'Nice!';
+}
+.main-container .blocks-container .messages .msg-game-over::before{
+    content: 'Game Over!';
+}
+/*End Blocks container*/
+/*Start game setting*/
+.main-container .game-setting{
+    border: 5px solid #61DAFB;
+    border-radius: 5px;
+    width: 370px;
+    float: right;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 1.5em;
+    overflow: auto;
+    padding-left: 10px;
+    position: relative;
+}
+.main-container .game-setting h2{
+    margin: 10px 0;
+    text-align: center;
+    color: brown;
+}
+.main-container .game-setting hr{
+    width: 250px;
+    margin: 10px auto 20px;
+}
+.main-container #player-name{
+    width: 95%;
+    height: 30px;
+    font-size: 1.1em;
+    padding: 20px;
+    text-align: center;
+    border: 5px solid rgba(165, 42, 42, .6);
+    border-radius: 20px;
+    outline: none;
+}
+.main-container .game-setting .style-line{
+    width: 60px;
+    height: 10px;
+    background-color: brown;
+    position: absolute;
+    top: 56px;
+    left: 150px;
+    border-radius: 20px;
+}
+.main-container .game-setting summary{
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    margin: 10px 0;
+
+}
+.main-container .game-setting input[type = "radio"]{
+    margin-left:30px;
+    width: 1.2em;
+    height: 1.2em;
+}
+.main-container .game-setting .setting-buttons{
+    border: 1px solid #DDD;
+    border-radius: 20px;
+    width: 170px;
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+.main-container .game-setting .setting-buttons:hover{
+    width: 90%;
+    transition: width .5s;
+    color: #FFF;
+    background-color: brown;
+}
+.main-container .game-setting div.setting-buttons:nth-of-type(3){
+    margin-top: 30px;
+}
+/*End game setting*/
+/*Start Game history*/
+.main-container .game-history{
+    border: 5px solid #61DAFB;
+    width: 370px;
+    height: 215px;
+    float: right;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: relative;
+    font-size: 1.5em;
+    text-align: center;
+}
+.main-container .game-history h2{
+    margin: 10px 0;
+    text-align: center;
+    color: brown;
+}
+.main-container .game-history hr{
+    width: 250px;
+    margin: 10px auto 20px;
+}
+.main-container .game-history .style-line{
+    width: 60px;
+    height: 10px;
+    background-color: brown;
+    position: absolute;
+    top: 56px;
+    left: 150px;
+    border-radius: 20px;
+}
+.main-container .game-history .best-score{
+    height: 55%;
+    overflow: auto;
+}
+/*End Game history*/

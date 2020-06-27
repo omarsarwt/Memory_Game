@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="learning HTML CSS HTML5 CSS3 JS DOM Bom BigTotrial">
+        <meta name="keywords" content="HTML, CSS, JavaScript, DOM, BOM">
+        <meta name="author" content="omar sarwt">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memory Game</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--Start info container-->
+        <div class="main-container">
+            <div class="info-container">
+                <div class="info-name">
+                    Hello : <span></span>
+                </div>
+                <div class="info-time">
+                    Time : <span></span>
+                </div>
+                <div class="info-tries">
+                    Wrong Tries : <span>0</span>
+                </div>
+            </div>
+            <!--End info container-->
+            <!--Start blocks container-->
+            <div class="blocks-container">
+                <div class="block-container" data-language="angular">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/angular.png" alt="angular">
+                    </div>
+                </div>
+                <div class="block-container" data-language="angular">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/angular.png" alt="angular">
+                    </div>
+                </div>
+                <div class="block-container" data-language="css">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/css.png" alt="css">
+                    </div>
+                </div>
+                <div class="block-container" data-language="css">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/css.png" alt="css">
+                    </div>
+                </div>
+                <div class="block-container" data-language="gethub">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/gethub.jpg" alt="gethub">
+                    </div>
+                </div>
+                <div class="block-container" data-language="gethub">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/gethub.jpg" alt="gethub">
+                    </div>
+                </div>
+                <div class="block-container" data-language="html">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/html.png" alt="html">
+                    </div>
+                </div>
+                <div class="block-container" data-language="html">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/html.png" alt="html">
+                    </div>
+                </div>
+                <div class="block-container" data-language="javascript">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/javascript.jpg" alt="javascript">
+                    </div>
+                </div>
+                <div class="block-container" data-language="javascript">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/javascript.jpg" alt="javascript">
+                    </div>
+                </div>
+                <div class="block-container" data-language="jest">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/jest.png" alt="jest">
+                    </div>
+                </div>
+                <div class="block-container" data-language="jest">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/jest.png" alt="jest">
+                    </div>
+                </div>
+                <div class="block-container" data-language="php">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/php.jpg" alt="php">
+                    </div>
+                </div>
+                <div class="block-container" data-language="php">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/php.jpg" alt="php">
+                    </div>
+                </div>
+                <div class="block-container" data-language="python">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/python.png" alt="python">
+                    </div>
+                </div>
+                <div class="block-container" data-language="python">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/python.png" alt="python">
+                    </div>
+                </div>
+                <div class="block-container" data-language="react">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/react.png" alt="react">
+                    </div>
+                </div>
+                <div class="block-container" data-language="react">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/react.png" alt="react">
+                    </div>
+                </div>
+                <div class="block-container" data-language="vies-js">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/vies-js.png" alt="vies-js">
+                    </div>
+                </div>
+                <div class="block-container" data-language="vies-js">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="images/vies-js.png" alt="vies-js">
+                    </div>
+                </div>
+                <div id="messages" class="">
+                    <div id="msg-success" class=""></div>
+                    <div id="msg-game-over" class=""></div>
+                </div>
+            </div>
+            <!--End blocks container-->
+            <!--Start game setting-->
+            <div class="game-setting">
+                <h2>Game Setting</h2>
+                <hr>
+                <input id="player-name" type="text" name="playerName" value="" placeholder="Type your name" maxlength="6">
+                <div class="style-line"></div>
+                <div>
+                    <details>
+                        <summary>Limit Time</summary>
+                        <div>
+                            <input type="radio" name="time" value="1">
+                            <label>1 minute</label><br>
+                            <input type="radio" name="time" value="2">
+                            <label>2 minute</label><br>
+                            <input type="radio" name="time" value="3">
+                            <label>3 minute</label><br>
+                            <input type="radio" name="time" value="4">
+                            <label>4 minute</label><br>
+                            <input type="radio" name="time" value="5">
+                            <label>5 minute</label><br>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>unLimit Time</summary>
+                        <input type="radio" name="time" value="6">
+                        <label>Open Time</label>
+                    </details>
+                </div>
+                <div class="setting-buttons">Start Game</div>
+                <div class="setting-buttons">Pause</div>
+                <div class="setting-buttons">Continue</div>
+                <div class="setting-buttons">Reset</div>
+            </div>
+            <div class=""></div>
+            <!--Start Game history-->
+            <div class="game-history">
+                <h2>Best Score</h2>
+                <hr>
+                <div class="style-line"></div>
+                <div class="best-score"></div>
+            </div>
+            <!--End Game history-->
+        </div>
+        <!--End game setting-->
+        <!--Start audios-->
+        <audio id="openDoor" src="audio/Door open sound effect.mp3" preload="auto"></audio>
+        <audio id="win" src="audio/Winning.mp3" preload="auto"></audio>
+        <audio id="fail" src="audio/Fail.mp3" preload="auto"></audio>
+        <audio id="success" src="audio/success.mp3" preload="auto"></audio>
+        <audio id="game-over" src="audio/game-over.mp3" preload="auto"></audio>
+        <!--End audios-->
+        <script src="js/main.js"></script>
+    </body>
+</html>
